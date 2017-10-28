@@ -1,5 +1,6 @@
 # LAN-PARTY-SEATMAP REMAKED
 LAN-Party Seatmap - for LAN-Party Admins | Only seatmap, no ticket system
+English language
 By PandaWithBandana
 
 This is an remake of the original LAN-SEATS GitHub project.
