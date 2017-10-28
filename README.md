@@ -1,35 +1,24 @@
-# LAN-PARTY-SEATMAP REMAKED 2017
-LAN-Party Seatmap - for LAN-Party Admins | Only seatmap, no ticket system
-English language
-By PandaWithBandana
+# LAN Seats
 
-This is an remake of the original LAN-SEATS GitHub project.
-By Remake I mean nicer design, easier installation setup and some new features.
--
-Original project:
-https://github.com/rogst/lan-seats
--
+LAN Seats is a PHP application meant to provide a seat booking system for LAN parties.
 
-# About:
-This is a Seatmap for LAN-Party hosters. This is only seatmap, no ticket system
-You'll have to make every account for every paid attendee.
-It's pure PHP, no frameworks or other extra shit needed.
+## Requirements
 
-# Requirements:
--Webserver with PHP installed
--MySQL/MariaDB database
--PHP mysql client
--PHP cli
+* Webserver with PHP installed
+* MySQL/MariaDB database
+* PHP mysql client
+* PHP cli
 
-# Install
-Just input your database connection settings in the config.php file
+## Configuration
 
-# Usage
-Add every user to the tickets table in the database.
-There is NO ticket system, unfortunately. So you'll have to add every paid attendee.
-Easy as that.
-(this software/project is meant for more small lan-parties)
+First you need to create a floorplan in the floorplan.php file. The numbers used in the floorplan is defined in the floortypes table in the database. 
 
-# LICENSE
-This software/project is licensed under The MIT License.
-# All rights to their respective owners.
+When you are done with the floorplan you import it to the database using the import_floorplan.php script which can be launched with PHP CLI on the command line.
+
+## Usage
+
+You need to add tickets in the tickets table, and you send the ticket code and ticket password to the users that have payed for the tickets. The users can then use that information to book their seat.
+
+## License
+
+The MIT License (MIT)

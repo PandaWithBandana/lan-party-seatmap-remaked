@@ -1,0 +1,50 @@
+<?php
+
+require_once('config.php');
+require_once('floorplan.php');
+
+$mysqli = new mysqli($config->databaseHost, $config->databaseUser, $config->databasePass, $config->databaseName);
+
+if ($mysqli->connect_errno) {
+    echo('<div class="isa_error">
+   <i class="fa fa-times-circle"></i>
+   Database connection failed, please ensure that all information in config.php is correct');
+    exit;
+}
+
+$mysqli->query('truncate table floorplan;');
+
+$y_max = count($floor);
+$row = 1;
+$seat = 1;
+$newrow = false;
+for ($y = 0; $y < $y_max; $y++) {
+    $x_max = count($floor[$y]);
+    for ($x = 0; $x < $x_max; $x++) {
+        $type = $floor[$y][$x];
+        if ($type == 6 || $type == 7) {
+            $query = 'insert into `floorplan` (x, y, type, row, seat) values ('.$x.','.$y.','.$type.','.$row.','.$seat.');';
+            $seat++;
+            $newrow = true;
+        } else {
+            $query = 'insert into `floorplan` (x, y, type) values ('.$x.','.$y.','.$type.');';
+        }
+        $mysqli->query($query);
+        if ($mysqli->error) { echo($mysqli->error); exit; }
+
+        echo($type);
+    }
+    
+    $seat = 1;
+    if ($newrow) {
+        $newrow = false;
+        $row++;
+    }
+    echo("\n");
+}
+
+$mysqli->close();
+
+
+echo('Done');
+?>

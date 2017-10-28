@@ -1,0 +1,1 @@
+&copy; Copyright 2017 YourLANPARTY. Seatmap by PandaWithBandana
