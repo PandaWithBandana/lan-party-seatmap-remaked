@@ -1,4 +1,4 @@
-# LAN-PARTY-SEATMAP REMAKED
+# LAN-PARTY-SEATMAP REMAKED 2017
 LAN-Party Seatmap - for LAN-Party Admins | Only seatmap, no ticket system
 English language
 By PandaWithBandana
