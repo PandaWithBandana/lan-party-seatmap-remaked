@@ -12,7 +12,6 @@ https://github.com/rogst/lan-seats
 # About:
 This is a Seatmap for LAN-Party hosters. This is only seatmap, no ticket system
 You'll have to make every account for every paid attendee.
-Easy to use. Just run /install.php and follow the setup steps.
 It's pure PHP, no frameworks or other extra shit needed.
 
 # Requirements:
@@ -22,7 +21,7 @@ It's pure PHP, no frameworks or other extra shit needed.
 -PHP cli
 
 # Install
-Run /install.php file and follow the easy setup steps.
+Just input your database connection settings in the config.php file
 
 # Usage
 Add every user to the tickets table in the database.
